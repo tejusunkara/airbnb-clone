@@ -1,6 +1,9 @@
 import React from "react";
 
 const Card = (props) => {
+
+  // const { card } = props;
+
   let badgeText;
   if (props.openSpots == 0) {
     badgeText = 'SOLD OUT';
@@ -23,8 +26,8 @@ const Card = (props) => {
           src="/assets/Star.png"
           className="h-3"
         />
-        <span className="text-light-black">{'\u00A0'}{props.rating.toFixed(1)}</span>
-        <span className="text-light-grey">{'\u00A0'}({props.reviewCount}) • {props.location}</span>
+        <span className="text-light-black">{'\u00A0'}{props.stats.rating.toFixed(1)}</span>
+        <span className="text-light-grey">{'\u00A0'}({props.stats.reviewCount}) • {props.location}</span>
       </div>
       <p className="not-italic font-poppins font-light text-light-black w-44 overflow-hidden text-ellipsis my-2">{props.title}</p>
       <p className="not-italic font-poppins font-light text-light-black pb-2">

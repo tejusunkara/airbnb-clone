@@ -6,23 +6,20 @@ import cards from './assets/cardData';
 
 function App() {
 
+  const cardItem = cards.map((card) => {
+    return <Card
+      key={card.id}
+      {...card}
+    // card = {card}
+    />
+  });
+
   return (
     <div>
       <Navbar />
       <Hero />
       <section className='flex flex-nowrap gap-5 overflow-x-auto p-5'>
-        {cards.map((card) => {
-          return <Card
-            key={card.id}
-            img={card.img}
-            rating={card.stats.rating}
-            reviewCount={card.stats.reviewCount}
-            location={card.location}
-            title={card.title}
-            price={card.price}
-            openSpots={card.openSpots}
-          />
-        })}
+        {cardItem}
       </section>
     </div>
   )
