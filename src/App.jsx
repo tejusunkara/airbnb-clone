@@ -10,18 +10,20 @@ function App() {
     <div>
       <Navbar />
       <Hero />
-      <div className='flex flex-row space-x-4'>
+      <section className='flex flex-nowrap gap-5 overflow-x-auto p-5'>
         {cards.map((card) => {
           return <Card
+            key={card.id}
             img={card.img}
-            rating={card.rating}
-            reviewCount={card.reviewCount}
-            country={card.country}
+            rating={card.stats.rating}
+            reviewCount={card.stats.reviewCount}
+            location={card.location}
             title={card.title}
             price={card.price}
+            openSpots={card.openSpots}
           />
         })}
-      </div>
+      </section>
     </div>
   )
 }
